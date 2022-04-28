@@ -14,10 +14,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(arr) {
+    if (!Array.isArray(arr)) return false;
     let res = [];
     for (let i = 0; i < arr.length; i++) {
         if (typeof arr[i] === 'string') {
-            res.push(arr[i][0]);
+            res.push(arr[i].trim()[0].toUpperCase());
         }
     }
     res.sort((a, b) => a.localeCompare(b));
